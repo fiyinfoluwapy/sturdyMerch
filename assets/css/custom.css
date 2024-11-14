@@ -1,14 +1,24 @@
-.hero-bg {
-    background-image: url('C:\Users\aades\OneDrive\Documents\sturdyMerch\assets\img\cartographer.png');
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+.hero-bg{
+    background-image: url('assets\img\cartographer.png');
 }
 
-#hoodie-image {
-    position: relative;
-    width: 100%;
-    max-width: 400px; /* Adjust the size as needed */
-    object-fit: contain;
+/* Initial state for elements with animations */
+[data-animate] {
+    opacity: 0;
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
+
+/* Individual animations */
+[data-animate="fade"] {
+    transform: translateY(20px);
+}
+
+[data-animate="zoom"] {
+    transform: scale(0.8);
+}
+
+[data-animate].visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
