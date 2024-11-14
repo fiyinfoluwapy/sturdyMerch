@@ -1,20 +1,25 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Sturdy Merch Store</title>
-    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--CSS-->
+
     <link rel="stylesheet" href="./assets/css/main.css">
-    <!--font awesome icons-->
+    <link rel="stylesheet" href="./assets/css/custom.css">
     <script src="https://kit.fontawesome.com/d776300fe4.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            once: true,  // Animations will only run once
+            duration: 1200, // Default animation duration
+        });
+    </script>
 </head>
 
 <body class="font-sans">
@@ -23,10 +28,9 @@
     <nav class="fixed top-0 left-0 w-full z-50 bg-transparent text-white px-4 py-6 transition-all duration-500 ease-in-out"
         id="navbar">
         <div class="container mx-auto flex justify-between items-center">
-            <!-- Store Logo -->
-            <a href="#" class="text-2xl font-bold tracking-widest">Strudy Merch</a>
+            <a href="#" class="text-2xl font-bold tracking-widest">Sturdy Merch</a>
 
-            <!-- Navigation Links (Desktop) -->
+            <!-- Desktop Links -->
             <ul class="hidden md:flex space-x-8">
                 <li><a href="#categories" class="hover:text-red-500 transition-colors">Categories</a></li>
                 <li><a href="#sale" class="hover:text-red-500 transition-colors">Sale</a></li>
@@ -34,68 +38,78 @@
                 <li><a href="#contact" class="hover:text-red-500 transition-colors">Contact</a></li>
             </ul>
 
-            <!-- Shopping Cart Icon -->
+            <!-- Cart Icon -->
             <div class="relative">
-                <button id="cart-icon">
-                    <i class="fa fa-shopping-bag"></i>
+                <button id="cart-icon" aria-label="View Cart">
+                    <i class="fa fa-shopping-bag text-2xl"></i>
                     <span id="cart-count"
                         class="absolute top-0 right-0 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">3</span>
                 </button>
             </div>
 
-            <!-- Hamburger Menu (Mobile) -->
+            <!-- Hamburger Menu for Mobile -->
             <div class="md:hidden">
-                <button id="hamburger-menu">
+                <button id="hamburger-menu" aria-label="Toggle Menu">
                     <i class="fa fa-bars"></i>
                 </button>
             </div>
         </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-black text-white py-4">
-            <ul class="space-y-4 text-center">
-                <li><a href="#categories" class="hover:text-red-500">Categories</a></li>
-                <li><a href="#sale" class="hover:text-red-500">Sale</a></li>
-                <li><a href="#about" class="hover:text-red-500">About</a></li>
-                <li><a href="#contact" class="hover:text-red-500">Contact</a></li>
-            </ul>
-        </div>
     </nav>
 
+    <!-- Mobile Menu (hidden by default) -->
+    <div id="mobile-menu" class="hidden bg-black text-white py-4 px-6 absolute top-16 left-0 w-full z-50">
+        <ul>
+            <li><a href="#categories" class="hover:text-red-500 transition-colors block py-2">Categories</a></li>
+            <li><a href="#sale" class="hover:text-red-500 transition-colors block py-2">Sale</a></li>
+            <li><a href="#about" class="hover:text-red-500 transition-colors block py-2">About</a></li>
+            <li><a href="#contact" class="hover:text-red-500 transition-colors block py-2">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Cart Popup (hidden by default) -->
+    <div id="cart-popup" class="hidden fixed top-1/4 right-4 bg-white p-6 shadow-lg rounded-lg z-50">
+        <h2 class="text-xl font-bold">Your Cart</h2>
+        <p>Cart is empty.</p>
+    </div>
+
+
     <!-- Hero Section -->
-    <section class="relative w-full h-screen hero-bg flex items-center justify-center text-center text-white">
+    <section class="relative w-full h-screen hero-bg flex items-center justify-center text-center text-white"
+        data-aos="fade-up" data-aos-duration="1500">
         <div class="absolute inset-0 bg-black opacity-40"></div> <!-- Overlay for text contrast -->
 
         <!-- Hero Content -->
         <div class="z-10 px-6 md:px-12 space-y-6">
-            <h1 class="text-7xl md:text-5xl font-extrabold tracking-tight text-red-800">
-                Sturdy Brainchild 
+            <h1 class="text-7xl md:text-5xl font-extrabold tracking-tight text-red-800" data-aos="fade-up"
+                data-aos-duration="1000">
+                Sturdy Brainchild
             </h1>
-            <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight">
+            <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight" data-aos="fade-up" data-aos-duration="1200">
                 Born from Vision, Crafted for You
             </h1>
-            <h2 class="text-2xl md:text-3xl font-semibold">Premium Hoodies, Tees & Ski Masks</h2>
+            <h2 class="text-2xl md:text-3xl font-semibold" data-aos="fade-up" data-aos-duration="1400">
+                Premium Hoodies, Tees & Ski Masks
+            </h2>
 
             <!-- CTA Button -->
             <a href="#shop"
-                class="bg-red-500 text-white py-3 px-8 rounded-lg mt-6 inline-block text-xl hover:bg-red-600 transition-all duration-300">
+                class="bg-red-500 text-white py-3 px-8 rounded-lg mt-6 inline-block text-xl hover:bg-red-600 transition-all duration-300"
+                data-aos="fade-up" data-aos-duration="1600">
                 Shop Now
             </a>
         </div>
 
         <!-- Hoodie Image with Animations -->
-        <div
-            class="absolute bottom-0 left-1/2 transform -translate-x-1/2 pb-12 md:pb-24 transition-all duration-700 ease-in-out hover:scale-110">
+        <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 transition-all duration-700 ease-in-out hover:scale-110"
+            data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="300">
             <img src="./assets/img/hoodie.png" alt="Hoodie"
-                class="w-56 md:w-96 object-cover transition-transform duration-500 ease-in-out">
+                class="w-56 md:w-96 object-cover transition-transform duration-500 ease-in-out align-center" id="hoodie-image">
         </div>
+
     </section>
 
+    <script src="./assets/js/main.js"></script>
 
-
-
-
-    <script src="" async defer></script>
 </body>
 
 </html>
