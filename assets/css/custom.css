@@ -1,24 +1,33 @@
-.hero-bg{
-    background-image: url('assets\img\cartographer.png');
-}
 
-/* Initial state for elements with animations */
+/* Initial hidden state for elements */
 [data-animate] {
     opacity: 0;
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-/* Individual animations */
-[data-animate="fade"] {
-    transform: translateY(20px);
-}
-
-[data-animate="zoom"] {
-    transform: scale(0.8);
-}
-
-[data-animate].visible {
+    transform: translateY(30px);
+    transition: opacity 2.5s ease-out, transform 2.5s ease-out;
+  }
+  
+  /* Visible state triggered by JavaScript */
+  .visible {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
+  }
+  
+/* Custom Styles for Mobile Navigation */
+#mobile-menu {
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
 }
 
+#mobile-menu.open {
+    transform: translateX(0);
+}
+
+/* Styling for Active Nav Links */
+.nav-link {
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: red;
+   
+}

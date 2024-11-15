@@ -13,7 +13,34 @@
 </head>
 
 <body class="font-sans">
+    <header class="fixed w-full z-50 bg-white shadow-lg">
+        <nav class="flex justify-between items-center py-4 px-6">
+            <div class="text-3xl md:text-xl font-bold text-red-500 logo-text">
+                Sturdy Merch
+            </div>
 
+            <div class="hidden md:flex space-x-6 text-red-100">
+                <a href="#home" class="nav-link hover:text-red-500">Home</a>
+                <a href="#catalogue" class="nav-link hover:text-red-500">Catalogue</a>
+                <a href="#catalogue" class="nav-link hover:text-red-500">Catalogue</a>
+                <a href="#catalogue" class="nav-link hover:text-red-500">Catalogue</a>
+            </div>
+            <button id="menu-button" class="md:hidden text-3xl text-blue-100" aria-label="Open menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div id="mobile-menu" class="hidden fixed right-0 top-0 h-full w-64 bg-white shadow-lg p-6 space-y-6">
+                <button id="close-menu" class="text-xl text-blue-100" aria-label="Close menu">
+                    <i class="fas fa-times"></i>
+                </button>
+                <a href="#home" class="block nav-link text-indigo-950">Home</a>
+                <a href="#catalogue" class="block nav-link text-indigo-950">Catalogue</a>
+                <a href="#services" class="block nav-link text-indigo-950">Services</a>
+                <a href="#show-appointment" class="block nav-link text-indigo-950">Book Appointment</a>
+                <a href="#FAQ" class="block nav-link text-indigo-950">FAQ</a>
+                <a href="#testimonials" class="block nav-link text-indigo-950">Testimonies</a>
+            </div>
+        </nav>
+    </header>
 
 
 
@@ -24,7 +51,7 @@
 
         <!-- Hoodie Image positioned behind the text -->
         <div class="absolute inset-0 flex items-center justify-center z-0">
-            <img src="./assets/img/hoodie.png" alt="Hoodie" class="w-2/3 md:w-1/2 object-cover opacity-10">
+            <img src="./assets/img/hoodie.png" alt="Hoodie" class="w-2/3 md:w-1/2 object-cover " style="opacity: 0.8;">
         </div>
 
         <!-- Hero Content -->
